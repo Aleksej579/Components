@@ -50,6 +50,12 @@
             Codepen
           </a>
         </li>
+        <li>
+          <a href="#"
+            :class="{ 'is-active': tab == 'tab6'}" @click.prevent="tab = 'tab6'">
+            Instagramm
+          </a>
+        </li>
       </ul>
       <div class="tab__content-wrapper">
         <div x-show="tab == 'tab1'" class="tab__content liquid">
@@ -288,25 +294,25 @@
             <summary><span>JS</span></summary>
             <pre>
               <code>            
-                document.addEventListener('DOMContentLoaded', () => {});
-                setTimeout(() => {}, 500);
-                
-                setTimeout(() => {
-                  let btnString = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta');
-                  let btnStringData = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta')?.innerText;
-                  let btnStringNew = btnStringData?.replace('To', 'to');
-                  btnString.innerText = btnStringNew;
-                }, 3000);
+document.addEventListener('DOMContentLoaded', () => {});
+setTimeout(() => {}, 500);
 
-                if (document.getElementById("main-collection-filters")) {
-                  window.addEventListener('scroll', function () {
-                  let elem = document.getElementById("main-collection-filters");
-                  let topCoord = elem.getBoundingClientRect().top;
-                  if (topCoord &lt; 56) { elem.style.opacity=0; } if (topCoord> 50) {
-                    elem.style.opacity = 1;
-                    }
-                  });
-                }
+setTimeout(() => {
+  let btnString = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta');
+  let btnStringData = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta')?.innerText;
+  let btnStringNew = btnStringData?.replace('To', 'to');
+  btnString.innerText = btnStringNew;
+}, 3000);
+
+if (document.getElementById("main-collection-filters")) {
+  window.addEventListener('scroll', function () {
+  let elem = document.getElementById("main-collection-filters");
+  let topCoord = elem.getBoundingClientRect().top;
+  if (topCoord &lt; 56) { elem.style.opacity=0; } if (topCoord> 50) {
+    elem.style.opacity = 1;
+    }
+  });
+}
               </code>
             </pre>
           </details>
@@ -1177,7 +1183,7 @@
           </details>
 
         </div>
-        <div x-show="tab == 'tab5'" class="tab__content components">
+        <div x-show="tab == 'tab5'" class="tab__content codepen">
           <div class="codepen__wrapper-item">
             <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="YzBgrjJ"
               data-pen-title="ToDoInCSS" data-user="Aleksej579"
@@ -1222,11 +1228,34 @@
             <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
           </div>
 
+          <div class="codepen__wrapper-item">
+            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="PorowMN"
+              data-pen-title="switches" data-user="Aleksej579"
+              style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/PorowMN">
+                  switches</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+          </div>
+
+        </div>
+
+        <div x-show="tab == 'tab6'" class="tab__content instagramm">
+          <div class="instagramm__wrapper-item">
+
+          </div>
         </div>
       </div>
     </main>
 
     <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('utils', () => ({
+          isLoading: false,
+        }))
+      })
+
       function dropdown() {
         return {
           open: false,
