@@ -59,57 +59,67 @@
       </ul>
       <div class="tab__content-wrapper">
         <div x-show="tab == 'tab1'" class="tab__content liquid">
-          <details>
-            <summary><span>Metafield</span></summary>
-            <pre>
-              <code>            
-                # get product metafield data
-                {%- if product.metafields.custom.m_name != blank -%}
-                  {{ product.metafields.custom.m_name | metafield_tag }}
-                {%- endif -%}
-              </code>
-            </pre>
-          </details>
 
-          <details>
-            <summary><span>Menu</span></summary>
-            <pre>
-              <code>            
-                # get from link menu image collection
-                {{ childlink.object.image }}
-              </code>
-            </pre>
-          </details>
+          <div x-data="{ open: false }" class="component__wrapper">
+            <button @click="open = ! open">Metafield</button>
+            <div x-show="open" class="component__code">
+              <pre>
+                <code>            
+  # get product metafield data
+  {%- if product.metafields.custom.m_name != blank -%}
+    {{ product.metafields.custom.m_name | metafield_tag }}
+  {%- endif -%}
+                </code>
+              </pre>
+            </div>
+          </div>
 
-          <details>
-            <summary><span>File</span></summary>
-            <pre>
-              <code>            
-                {% assign my_variable = false %}
-                {% render 'filename' %}
+          <div x-data="{ open: false }" class="component__wrapper">
+            <button @click="open = ! open">Menu</button>
+            <div x-show="open" class="component__code">
+              <pre>
+                <code>            
+  # get from link menu image collection
+  {{ childlink.object.image }}
+                </code>
+              </pre>
+            </div>
+          </div>
 
-                {{ 'file.css' | asset_url | stylesheet_tag }}
-              </code>
-            </pre>
-          </details>
+          <div x-data="{ open: false }" class="component__wrapper">
+            <button @click="open = ! open">File</button>
+            <div x-show="open" class="component__code">
+              <pre>
+                <code>            
+  {% assign my_variable = false %}
+  {% render 'filename' %}
+  
+  {{ 'file.css' | asset_url | stylesheet_tag }}
+                </code>
+              </pre>
+            </div>
+          </div>
 
-          <details>
-            <summary><span>Image picker</span></summary>
-            <pre>
-              <code>            
-                {
-                  "type": "image_picker",
-                  "id": "account_image",
-                  "label": "Image for account"
-                }
-                {{
-                  section.settings.account_image
-                  | image_url: width: 364
-                  | image_tag: class: 'account__image', loading: 'lazy'
-                }}
-              </code>
-            </pre>
-          </details>
+          <div x-data="{ open: false }" class="component__wrapper">
+            <button @click="open = ! open">Image picker</button>
+            <div x-show="open" class="component__code">
+              <pre>
+                <code>            
+  {
+    "type": "image_picker",
+    "id": "account_image",
+    "label": "Image for account"
+  }
+  {{
+    section.settings.account_image
+    | image_url: width: 364
+    | image_tag: class: 'account__image', loading: 'lazy'
+  }}
+                </code>
+              </pre>
+            </div>
+          </div>
+
 
           <details>
             <summary><span>for in order</span></summary>
@@ -1183,6 +1193,7 @@ if (document.getElementById("main-collection-filters")) {
           </details>
 
         </div>
+
         <div x-show="tab == 'tab5'" class="tab__content codepen">
           <div class="codepen__wrapper-item">
             <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="YzBgrjJ"
@@ -1244,30 +1255,15 @@ if (document.getElementById("main-collection-filters")) {
         <div x-show="tab == 'tab6'" class="tab__content instagramm">
           <div class="instagramm__wrapper-item">
 
+
+
           </div>
         </div>
       </div>
     </main>
 
     <script>
-      document.addEventListener('alpine:init', () => {
-        Alpine.data('utils', () => ({
-          isLoading: false,
-        }))
-      })
 
-      function dropdown() {
-        return {
-          open: false,
-          trigger: {
-            'x-on:click'() { this.open = !this.open },
-          },
-          dialogue: {
-            'x-show'() { return this.open },
-            'x-bind:class'() { return 'foo bar' },
-          },
-        }
-      }
     </script>
     
     <script type="module" src="/main.js"></script>
