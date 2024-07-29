@@ -331,9 +331,9 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Screen</span></summary>
             <pre>
               <code>            
-                window.addEventListener("orientationchange", function() {
-                  //code
-                }, false);
+window.addEventListener("orientationchange", function() {
+  //code
+}, false);
               </code>
             </pre>
           </details>
@@ -342,15 +342,15 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Scroll</span></summary>
             <pre>
               <code>            
-                //hide megamenu when scroll
-                let megamenuDetails = document.querySelectorAll("header-menu details");
-                  window.onscroll = () => {
-                    megamenuDetails.forEach((item) => {
-                    item.open = false;
-                  });
-                }
+//hide megamenu when scroll
+let megamenuDetails = document.querySelectorAll("header-menu details");
+  window.onscroll = () => {
+    megamenuDetails.forEach((item) => {
+    item.open = false;
+  });
+}
 
-                element.scrollIntoView();
+element.scrollIntoView();
               </code>
             </pre>
           </details>
@@ -359,13 +359,13 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Event</span></summary>
             <pre>
               <code>            
-                const element = document.querySelector("#box");
-                element.addEventListener("mouseover", event => {
-                  console.log("Mouse in (over)");
-                });
-                element.addEventListener("mouseout", event => {
-                  console.log("Mouse out");
-                });
+const element = document.querySelector("#box");
+element.addEventListener("mouseover", event => {
+  console.log("Mouse in (over)");
+});
+element.addEventListener("mouseout", event => {
+  console.log("Mouse out");
+});
               </code>
             </pre>
           </details>
@@ -374,11 +374,11 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Class</span></summary>
             <pre>
               <code>            
-                node.closest('.next-node');
-                node.classList.add("active");
-                node.classList.remove("active");
-                node.classList.toggle("active");
-                node.className = node.className.replace(" active", "");
+node.closest('.next-node');
+node.classList.add("active");
+node.classList.remove("active");
+node.classList.toggle("active");
+node.className = node.className.replace(" active", "");
               </code>
             </pre>
           </details>
@@ -387,29 +387,29 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Load</span></summary>
             <pre>
               <code>            
-                //if elment is insert to DOM
-                document.addEventListener('DOMContentLoaded', () => {
-                  let i = setInterval(function() {
-                    if (document.querySelector("#insta-feed")){
-                      clearInterval(i);
-                    }
-                  }, 1000);
-                  setTimeout(function(){
-                    //code when element is insrt to DOM
-                  },1000)
-                  
-                  //when screen rotated
-                  window.addEventListener("orientationchange", function() {
-                    let i = setInterval(function() {
-                      if (document.querySelector("#insta-feed")){
-                        clearInterval(i);
-                      }
-                    }, 1000);
-                    setTimeout(function(){
-                      //code if screen rotated
-                    },1000)
-                  }, false);
-                });
+//if elment is insert to DOM
+document.addEventListener('DOMContentLoaded', () => {
+  let i = setInterval(function() {
+    if (document.querySelector("#insta-feed")){
+      clearInterval(i);
+    }
+  }, 1000);
+  setTimeout(function(){
+    //code when element is insrt to DOM
+  },1000)
+  
+  //when screen rotated
+  window.addEventListener("orientationchange", function() {
+    let i = setInterval(function() {
+      if (document.querySelector("#insta-feed")){
+        clearInterval(i);
+      }
+    }, 1000);
+    setTimeout(function(){
+      //code if screen rotated
+    },1000)
+  }, false);
+});
               </code>
             </pre>
           </details>
@@ -418,20 +418,20 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Click</span></summary>
             <pre>
               <code>            
-                // remove if click not an element
-                window.addEventListener('click', e => {
-                  const target = e.target
-                  if (!target.closest('.hero__content-form')
-                      && !target.closest('.btn-form')
-                      && !target.closest(`a[href="#${anchor}"]`)
-                      && !target.closest(`.footer__quicklinks a[href="#${anchor}"]`)
-                    ) {
-                    if (homeContactForm) {
-                      homeContactForm.classList.remove('show')
-                      btnOverlay.classList.remove('active');
-                    }
-                  }
-                })
+// remove if click not an element
+window.addEventListener('click', e => {
+  const target = e.target
+  if (!target.closest('.hero__content-form')
+      && !target.closest('.btn-form')
+      && !target.closest(`a[href="#${anchor}"]`)
+      && !target.closest(`.footer__quicklinks a[href="#${anchor}"]`)
+    ) {
+    if (homeContactForm) {
+      homeContactForm.classList.remove('show')
+      btnOverlay.classList.remove('active');
+    }
+  }
+})
               </code>
             </pre>
           </details>
@@ -440,8 +440,8 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Form</span></summary>
             <pre>
               <code>            
-                form.reset();
-                input.blur();
+form.reset();
+input.blur();
               </code>
             </pre>
           </details>
@@ -450,14 +450,14 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Method</span></summary>
             <pre>
               <code>            
-                item.nextElementSibling.classList.toggle('is-hidden');
+item.nextElementSibling.classList.toggle('is-hidden');
 
-                let arr = document.querySelectorAll('.selector');
-                arr.forEach((item, index) => {
-                  let itemChaild = item.querySelector('.sub-selector');
-                  item.addEventListener('mouseover', () => {});
-                  item.addEventListener('mouseout', () => {});
-                });
+let arr = document.querySelectorAll('.selector');
+arr.forEach((item, index) => {
+  let itemChaild = item.querySelector('.sub-selector');
+  item.addEventListener('mouseover', () => {});
+  item.addEventListener('mouseout', () => {});
+});
               </code>
             </pre>
           </details>
@@ -466,15 +466,15 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Clear form</span></summary>
             <pre>
               <code>            
-                //clear input
-                let popupWrapField = document.querySelectorAll('.popup__field-wrap');
-                popupWrapField.forEach((item) => {
-                  let fieldClear = item.querySelector('input');
-                  let btnClear = item.querySelector('.popup__btn-clear');
-                  btnClear.addEventListener('click', () => {
-                    fieldClear.value = '';
-                  });
-                });
+//clear input
+let popupWrapField = document.querySelectorAll('.popup__field-wrap');
+popupWrapField.forEach((item) => {
+  let fieldClear = item.querySelector('input');
+  let btnClear = item.querySelector('.popup__btn-clear');
+  btnClear.addEventListener('click', () => {
+    fieldClear.value = '';
+  });
+});
               </code>
             </pre>
           </details>
@@ -483,362 +483,362 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Notes</span></summary>
             <pre>
               <code>            
-                //--- DATA STRUCTURES --------------------------------------
-                const arrEmp = [];
-                const arrNum = [1, 2, 3, 4, 5]
-                const arrFlt = [1, 2, 3, [4, 5]]
-                const str = 'test'
-                const str_ = 'test qa'
-                const arrTxt = ['text_1', 'text_2', 'text_3'];
-                const obj = {
-                name: 'Viki',
-                age: 30,
-                };
-                const arrObj = [
-                  {id: 1, name: 'Mari'},
-                  {id: 2, name: 'Viki'},
-                  {id: 3, name: 'Jane'}
-                ];
-                
-                //---МЕТОДЫ---------------------------------------------------------------------
-                arr.unshift('item1', 'item2') // add to start
-                arr.shift() // delete from start
-                arr.push('text_4', 'text_5') // add to end
-                arr.pop(); // delete from end
-                arr.indexOf("text_1") // показывает индекс "Ананас" отсчет с начала
-                arr.lastIndexOf("text_1") // показывает индекс "Ананас" отсчет с конца
-                arr.length; // количество элементов
-                arr.slice(1,3) // копирует новый массив с 1 по 3 без 3
-                arr.splice(2, 1, 'tree') // с индекса 2 на количество 1 заменить на tree
-                arr.concat(newArr, nextArr) // обьеденяет в новый массив
-                arr.includes("text_1") // если есть "text_1" то true
-                arrNum.filter(item => item > 3) // [4, 5]
-                arrTxt.map(item => item.length) // [6, 6, 6]
-                arrNum.map(n => 'text ' + n) // [ "text 1", "text 2", "text 3", "text 4", "text 5" ]
-                arrNum.map(Math.pow) // [1, 2, 9, 64, 625]
-                arrTxt.sort((a, b) => a.localeCompare(b)) // ['text_1', 'text_2', 'text_3'] order abc...
-                arrNum.sort((a, b) => a - b); // [1, 2, 3, 4, 5] order sort from min to max
-                arrNum.sort((a, b) => a - b); // [5, 4, 3, 2, 1] order sort from max to min
-                arrNum.at(-1) // 5
-                arrNum.reduce((sum, current) => sum + current) // 15 Sum all number
-                arrNum.reduce((sum, current) => sum > current ? sum : current) // max number
-                arrNum.reduce((sum, current) => sum &lt; current ? sum : current) // min number arrObj.find(item=> item.id == 3) //console.log(user.name);
-                arrNum.forEach(item => console.log(item)) //1, 2, 3, 4, 5
-                arrNum.forEach(item => acumArr.push(item * 2)) //2, 4, 6, 8, 10
-                arrNum.some(item => item === 3) // true (есть ли хоть один эл.)
-                arrNum.every(item => item > 0) // true (соотв. ли каждый эл.)
-                arrFlt.flat() // [1, 2, 3, 4, 5]
-                str.split('').reverse().join('');
-                str.toUpperCase() // TEST
-                str.toLowerCase() // test
-                str.length // 4
-                str.charAt(3) // i
-                str.repeat(3) // 'testtesttest'
-                str.substring(1, 4) // tri
-                str.substr(1, 3) // tri
-                str_.indexOf('qa') // 5
-                str_.replace('qa', 'good') // test good
-                str_.slice(2) // st qa
-                str_.split(' ') // [ "test", "qa" ]
-                str.padStart(10, '~') // "~~~~~~test"
-                str.padEnd(10, '~') // "test~~~~~~"
-                str.trim() // .trimStart() & .trimEnd() удалить пробелы с конца и начала
-                JSON.stringify(obj) // to string '{"name":"Viki","age":30}'
-                Array.from('Media') // [ "M", "e", "d", "i", "a" ]
-                Object.is({}, {}) // false (different object) strict object comparison | === the best
-                Object.assign({}, obj_1, obj_2); // CREATE OBJECT: copy all property to one object
-                typeof arrNum // object
-                const str = arrNum.toString() // 1,2,3,4,5
-                eval('5+6') // 11
-                2.56789.toPrecision(3) // 2.56
-                2.56789.toFixed(3) // 2.567
-                parseInt("45", 10) // 45 в 10-й стст.счисл.
-                parseFloat("45.5") // 45.5
-                10 ** 2 // 100
-                Math.sqrt(25) // 5
-                Math.pow(10, 2) // 100
-                console.log( "%cHello %cWorld%c!!", "color: blue;", "font-size: xx-large;", "/* no CSS rule*/" ); // color style
-                console
-                console.table(arrObj, ['id', 'name']);
-                console.warn();
-                console.err();
-                console.assert('one' === 1);
-                document.write(); //вывести на страницу
-                window.open(); //открыть новое окно в браузере
-                location.reload(); // перегрузить вкладку
-                `text ${5+5} text` // template string
-                [...arrNum, ...arrTxt] //[1, 2, 3, 4, 5, 'text_1', 'text_2', 'text_3']
-                const [one, two] = arrNum // console.log(one, two)
-                [a, b] = [b, a] // a = 10; b = 20; a = 20; b = 10;
-                false || 10 // 10 (default parameters)
-                null ?? 10 // null or undefined ?? right!
-                10 > 5 ? 'true' : 'false' // true
-              
-                var today = new Date().toLocaleDateString('en-GB', {
-                day : 'numeric',
-                month : 'short',
-                year : 'numeric'
-                });
-              
-                //--- ES+2024 ------------------------------------------------
-              
-                const array = [1, 2, 3, 4, 5];
-                Object.groupBy(array, (num, index) => {
-                return num % 2 === 0 ? 'even': 'odd';
-                }); // { odd: [1, 3, 5], even: [2, 4] }
-              
-                //--- FUNCTION------------------------------------------------
-                function nameFun(n){return n};
-                const nameFun = function(){};
-                const nameFun = (x, y) => x + y; //console.log(nameFun(25)); (50)
-                ;(function(){}());
-              
-                //--- CURRY ----------------------------------------------
-                const curry = (a) => (b) => (c) => a + b + c
-                console.log(curry(2)(4)(6)) //12
-              
-                let regexp = /w+/g;
-              
-                //--- WHILE ----------------------------------------------
-                while(){}; // while(1 &lt; 5){console.log(); i++;} 
+//--- DATA STRUCTURES --------------------------------------
+const arrEmp = [];
+const arrNum = [1, 2, 3, 4, 5]
+const arrFlt = [1, 2, 3, [4, 5]]
+const str = 'test'
+const str_ = 'test qa'
+const arrTxt = ['text_1', 'text_2', 'text_3'];
+const obj = {
+name: 'Viki',
+age: 30,
+};
+const arrObj = [
+{id: 1, name: 'Mari'},
+{id: 2, name: 'Viki'},
+{id: 3, name: 'Jane'}
+];
 
-                //--- DO WHILE ------------------------------------------- 
-                do{}while();
+//---МЕТОДЫ---------------------------------------------------------------------
+arr.unshift('item1', 'item2') // add to start
+arr.shift() // delete from start
+arr.push('text_4', 'text_5') // add to end
+arr.pop(); // delete from end
+arr.indexOf("text_1") // показывает индекс "Ананас" отсчет с начала
+arr.lastIndexOf("text_1") // показывает индекс "Ананас" отсчет с конца
+arr.length; // количество элементов
+arr.slice(1,3) // копирует новый массив с 1 по 3 без 3
+arr.splice(2, 1, 'tree') // с индекса 2 на количество 1 заменить на tree
+arr.concat(newArr, nextArr) // обьеденяет в новый массив
+arr.includes("text_1") // если есть "text_1" то true
+arrNum.filter(item => item > 3) // [4, 5]
+arrTxt.map(item => item.length) // [6, 6, 6]
+arrNum.map(n => 'text ' + n) // [ "text 1", "text 2", "text 3", "text 4", "text 5" ]
+arrNum.map(Math.pow) // [1, 2, 9, 64, 625]
+arrTxt.sort((a, b) => a.localeCompare(b)) // ['text_1', 'text_2', 'text_3'] order abc...
+arrNum.sort((a, b) => a - b); // [1, 2, 3, 4, 5] order sort from min to max
+arrNum.sort((a, b) => a - b); // [5, 4, 3, 2, 1] order sort from max to min
+arrNum.at(-1) // 5
+arrNum.reduce((sum, current) => sum + current) // 15 Sum all number
+arrNum.reduce((sum, current) => sum > current ? sum : current) // max number
+arrNum.reduce((sum, current) => sum &lt; current ? sum : current) // min number arrObj.find(item=> item.id == 3) //console.log(user.name);
+arrNum.forEach(item => console.log(item)) //1, 2, 3, 4, 5
+arrNum.forEach(item => acumArr.push(item * 2)) //2, 4, 6, 8, 10
+arrNum.some(item => item === 3) // true (есть ли хоть один эл.)
+arrNum.every(item => item > 0) // true (соотв. ли каждый эл.)
+arrFlt.flat() // [1, 2, 3, 4, 5]
+str.split('').reverse().join('');
+str.toUpperCase() // TEST
+str.toLowerCase() // test
+str.length // 4
+str.charAt(3) // i
+str.repeat(3) // 'testtesttest'
+str.substring(1, 4) // tri
+str.substr(1, 3) // tri
+str_.indexOf('qa') // 5
+str_.replace('qa', 'good') // test good
+str_.slice(2) // st qa
+str_.split(' ') // [ "test", "qa" ]
+str.padStart(10, '~') // "~~~~~~test"
+str.padEnd(10, '~') // "test~~~~~~"
+str.trim() // .trimStart() & .trimEnd() удалить пробелы с конца и начала
+JSON.stringify(obj) // to string '{"name":"Viki","age":30}'
+Array.from('Media') // [ "M", "e", "d", "i", "a" ]
+Object.is({}, {}) // false (different object) strict object comparison | === the best
+Object.assign({}, obj_1, obj_2); // CREATE OBJECT: copy all property to one object
+typeof arrNum // object
+const str = arrNum.toString() // 1,2,3,4,5
+eval('5+6') // 11
+2.56789.toPrecision(3) // 2.56
+2.56789.toFixed(3) // 2.567
+parseInt("45", 10) // 45 в 10-й стст.счисл.
+parseFloat("45.5") // 45.5
+10 ** 2 // 100
+Math.sqrt(25) // 5
+Math.pow(10, 2) // 100
+console.log( "%cHello %cWorld%c!!", "color: blue;", "font-size: xx-large;", "/* no CSS rule*/" ); // color style
+console
+console.table(arrObj, ['id', 'name']);
+console.warn();
+console.err();
+console.assert('one' === 1);
+document.write(); //вывести на страницу
+window.open(); //открыть новое окно в браузере
+location.reload(); // перегрузить вкладку
+`text ${5+5} text` // template string
+[...arrNum, ...arrTxt] //[1, 2, 3, 4, 5, 'text_1', 'text_2', 'text_3']
+const [one, two] = arrNum // console.log(one, two)
+[a, b] = [b, a] // a = 10; b = 20; a = 20; b = 10;
+false || 10 // 10 (default parameters)
+null ?? 10 // null or undefined ?? right!
+10 > 5 ? 'true' : 'false' // true
 
-                //--- FOR ------------------------------------------------ 
-                for (let item=0; item&lt;10; item++) {console.log(`Same
-                  text ${item} !`)} 
+var today = new Date().toLocaleDateString('en-GB', {
+day : 'numeric',
+month : 'short',
+year : 'numeric'
+});
 
-                //--- FOR IN --------------------------------------------- 
-                for (let key in obj)
-                  {console.log(key)}; // name age 
+//--- ES+2024 ------------------------------------------------
 
-                //--- FOR OF --------------------------------------------- 
-                for (const item of arr) {
-                  console.log(`This text ${item}`)
-                } 
-                for (let [key, value] of m) {
-                  console.log(`${key} ${value}`)
-                } 
-                for (const [i, v] of ['a', 'b' , 'c' ].entries()) { 
-                  console.log(i, v) 
-                } 
+const array = [1, 2, 3, 4, 5];
+Object.groupBy(array, (num, index) => {
+return num % 2 === 0 ? 'even': 'odd';
+}); // { odd: [1, 3, 5], even: [2, 4] }
 
-                //--- IF -------------------------------------------------
-                if(){}else{}; 
+//--- FUNCTION------------------------------------------------
+function nameFun(n){return n};
+const nameFun = function(){};
+const nameFun = (x, y) => x + y; //console.log(nameFun(25)); (50)
+;(function(){}());
 
-                //--- SWITCH --------------------------------------------- 
-                switch(выр){case выр: инстр; case выр:
-                инстр; default: инстр}; 
+//--- CURRY ----------------------------------------------
+const curry = (a) => (b) => (c) => a + b + c
+console.log(curry(2)(4)(6)) //12
 
-                //--- OBJECT + ITERATOR --------------------------------- 
-                Object.keys(obj).forEach(item=> {
-                  console.log(`Key is ${item}`)
-                });
-                Object.values(obj).forEach(item => {
-                  console.log(`Key is ${item}`)
-                });
-              
-                //--- MAP ----------------------------------------
-                const m = new Map();
-                .set(); // m.set('x', 'foo').set('y', 'bar');
-                .get(); // m.get(x); взять значение по ключю
-                .delete(); // m.delete(x); удалить значение
-                .clear(); // m.clear(); очистить карту
-                .size; // m.size; количество ключей
-                .has(); // m.has(x); наличие ключа
-            
-                //--- SET -------------------------------------------------
-                const s = new Set(arr); // создать set из массива
-                const s = new Set(); // var s = new Set(["апельсины", "яблоки", "бананы"]);
-                .add(); // s.add("some text").add(1).add(2).add(3);
-                .has(); // s.has(1);
-                .size; // s.size;
-                .delete(); // s.delete(5)
-                // ---пример 2
-                const text = 'Inndiaa';
-                const s = new Set(text); // Set ['I', 'n', 'd', 'i', 'a']
-                // ---пример 3 (обьединение множества)
-                const a = new Set([1,2,3]);
-                const b = new Set([4,3,2]);
-                const union = new Set([...a, ...b]);
-                // ---пример 4 (итерировать)
-                let arr = [1,2,3,4,5];
-                let numbers = new Set(arr);
-                console.log(numbers);
-            
-                // наследование ----------------------------------
-                var animal = {
-                  eats: 'ham ham'
-                }
-                var dog = {
-                  say: 'gav'
-                }
-                dog.__proto__ = animal;
-                console.log('dog do -', dog.eats);
-            
-                //копирование обьектов -----------------------
-                const personeParse = JSON.parse(JSON.stringify(obj)) //{ name: 'Viki', age: 30 } 
-                const personeParse = { ...obj } //{ name: 'Viki', age: 30 }
-            
-                //вывести по this ------------------------------
-                var user_1 = {
-                  name: 'jhon',
-                  this_Name: thisName
-                };
-                var user_2 = {
-                  name: 'smit',
-                  this_Name: thisName
-                };
-                function thisName() {
-                  return this.name;
-                }
-                console.log(user_2.this_Name());
-            
-                // массив из обьектов --------------------------------------------------
-                var user = {
-                  data: [
-                    {name: "jhon"},
-                    {name: "Smith"}
-                  ]
-                };
-                console.log(user.data[0].name);
-            
-                //----------------------------------------------------------------------
-                class Human {
-                  constructor(language){
-                    this.language = language;
-                  }
-                  lan(){
-                    console.log(this.language);
-                  }
-                }
-            
-                // наследование -----------------------
-                class Person extends Human {
-                  constructor(name, age, language){
-                    super(language);
-                    this.name = name;
-                    this.age = age;
-                  }
-                  sayName(){
-                    console.log(this.name);
-                  }
-                  sayAge(){
-                    console.log(this.age);
-                  }
-                }
-                const user_1 = new Person(`Nico`, 30, `en`);
-                user_1.sayName();
-                user_1.sayAge();
-                user_1.lan();
-            
-                //---НАСЛЕДОВАНИЕ ОБЬЕКТА---------------------------------------------
-                var protoMan = {name: "protoMan", color: "red"};
-                var man = {name: "Man"};
-                man.__proto__ = protoMan;
-                console.log(man.color);
-            
-                //---------- .setTimeout()
-                setTimeout(() => {console.log('for 1 sec')}, 5000) // запустить через 5 сек
-                setInterval(() => {console.log('for 1 sec')}, 5000) //запускать каждые 5 сек
-                //------------------------------------
-            
-                if (window.matchMedia('(max-width: 425px)').matches) {
-                  console.log(true);
-                } else {
-                  console.log(false);
-                }
-            
-                //------------------------------------
-                const objMain = {
-                  name: 'Mari',
-                  age: 30
-                };
-                const objSub = {
-                  subName: "liki",
-                  subAge: 29
-                };
-                objMain['anoutheObj'] = objSub;
-                console.log(objMain.anoutheObj.subName)
-            
-                //---увеличить пиксели в 2 раза
-                about:config
-                layout.css.devPixelsPerPx
-                -1.0
-                //---npm
-                npm -g list --depth=0 //список npm пакетов
-            
-                //---ПРИМЕР-----DOM---------------------------------------------------------------
-                const name_var = document.querySelector('#name_node');
-                name_var.addEventListener('click'() => {
-                  name_var.innerText = 'Qwert';
-                  name_var.innerHTML = "&lt;b>qwert&lt;/b>";
-                  name_var.style.color = "green";
-                  name_var.style.display ='none';
-                  name_var.style.border = '1px solid black';
-                  name_var.style.fontWeight = '700';
-                  name_var.style.textTransform = 'uppercase';
-                  name_var.classList.add('myClass');
-                  name_var.classList.contains('myClass');
-                  name_var.classList.replace('oldClass', 'newClass');
-                  name_var.classList.remove('myClass');
-                  name_var.classList.toggle("add_class");
-                  name_var.setAttribute('src', 'new-image.jpg');
-                  name_var.getAttribute('src');
-                  name_var.removeAttribute('src');
-                  name_var.append(document.createElement('p'));
-                  name_var.insertBefore(document.createElement('h1'), document.createElement('h2'));
-                  name_var.remove();
-                })
-            
-                //---if checkbokx checked----------------------------------------------------
-                var name_var_chbox = document.querySelector('input');
-                if (name_var_chbox.checked) { // если чекс бокс выбран;
-                name_var.style.display='none'; // то name_var присвоить "скрыть";
-                } else { // иначе;
-                name_var.style.display='block'; // name_var присвоить "показать";
-                };
-            
-                //--- check to exist ----------------
-                if(document.querySelector('#name_node')) {
-                document.querySelector('#name_node').value = 'Показать';
-                }
-                //--- if (условие1 && условие2) {}; -------------------------------------
-                if (let a > 0 && a&lt;10 && a % 2==0) { console.log('а чётное, больше нуля, меньше десяти'); } 
+let regexp = /w+/g;
 
-                //--- scroll page ------------------------------------- 
-                document.body.scrollTop=document.documentElement.scrollTop=305; 
+//--- WHILE ----------------------------------------------
+while(){}; // while(1 &lt; 5){console.log(); i++;} 
 
-                //--- теxt to speech ------------------------------------- 
-                let msg=new SpeechSynthesisUtterance(); msg.text='Text' ;
-                window.speechSynthesis.speak(msg); 
-                &lt;a href="javascript&colon;history.go(-1)">back&lt;/a>
-            
-                  =
-                  += // let i = 2; i+=1; (i=3)
-                  -= // let i = 2; i-=1; (i=1)
-                  == // равно
-                  === // строгое равно
-                  != //неравно
-                  > // меньше
-                  &lt;// больше>= // больше или равно
-                  &lt;= // меньше или равно + // 1+1 (2) + // 'first' +'last' ('firstlast') + // +'2' (2) - // 2-1 (1) 
-                  ++i // let two=2; ++two (3) 
-                  --i // let two=2; --two (1) 
-                  i++ 
-                  i-- 
-                  // логические 
-                  || // 0||0=0; 1||0=1; 0||1=1; (OR) 
-                  && // 0&&1=0; 1&&1=1; 1&&0=0; (AND) 
-                  ! // !true; (false) 
-                  // побитовые 
-                  ^ // 0^1=1; 1^1=0; 1^0=1; (XOR) 
-                  ~ // ~0=1;
-                  ~1=0; (NOT) унарный НЕ 
-                  &lt;&lt; // 101&lt;&lt;010; (сдвиг битов влево)
-                  >> // 101>>010; (сдвиг битов вправо)
-                  >>> //сдвиг битов вправо с заполнением старшего бита нулем
+//--- DO WHILE ------------------------------------------- 
+do{}while();
+
+//--- FOR ------------------------------------------------ 
+for (let item=0; item&lt;10; item++) {console.log(`Same
+text ${item} !`)} 
+
+//--- FOR IN --------------------------------------------- 
+for (let key in obj)
+{console.log(key)}; // name age 
+
+//--- FOR OF --------------------------------------------- 
+for (const item of arr) {
+console.log(`This text ${item}`)
+} 
+for (let [key, value] of m) {
+console.log(`${key} ${value}`)
+} 
+for (const [i, v] of ['a', 'b' , 'c' ].entries()) { 
+console.log(i, v) 
+} 
+
+//--- IF -------------------------------------------------
+if(){}else{}; 
+
+//--- SWITCH --------------------------------------------- 
+switch(выр){case выр: инстр; case выр:
+инстр; default: инстр}; 
+
+//--- OBJECT + ITERATOR --------------------------------- 
+Object.keys(obj).forEach(item=> {
+console.log(`Key is ${item}`)
+});
+Object.values(obj).forEach(item => {
+console.log(`Key is ${item}`)
+});
+
+//--- MAP ----------------------------------------
+const m = new Map();
+.set(); // m.set('x', 'foo').set('y', 'bar');
+.get(); // m.get(x); взять значение по ключю
+.delete(); // m.delete(x); удалить значение
+.clear(); // m.clear(); очистить карту
+.size; // m.size; количество ключей
+.has(); // m.has(x); наличие ключа
+
+//--- SET -------------------------------------------------
+const s = new Set(arr); // создать set из массива
+const s = new Set(); // var s = new Set(["апельсины", "яблоки", "бананы"]);
+.add(); // s.add("some text").add(1).add(2).add(3);
+.has(); // s.has(1);
+.size; // s.size;
+.delete(); // s.delete(5)
+// ---пример 2
+const text = 'Inndiaa';
+const s = new Set(text); // Set ['I', 'n', 'd', 'i', 'a']
+// ---пример 3 (обьединение множества)
+const a = new Set([1,2,3]);
+const b = new Set([4,3,2]);
+const union = new Set([...a, ...b]);
+// ---пример 4 (итерировать)
+let arr = [1,2,3,4,5];
+let numbers = new Set(arr);
+console.log(numbers);
+
+// наследование ----------------------------------
+var animal = {
+eats: 'ham ham'
+}
+var dog = {
+say: 'gav'
+}
+dog.__proto__ = animal;
+console.log('dog do -', dog.eats);
+
+//копирование обьектов -----------------------
+const personeParse = JSON.parse(JSON.stringify(obj)) //{ name: 'Viki', age: 30 } 
+const personeParse = { ...obj } //{ name: 'Viki', age: 30 }
+
+//вывести по this ------------------------------
+var user_1 = {
+name: 'jhon',
+this_Name: thisName
+};
+var user_2 = {
+name: 'smit',
+this_Name: thisName
+};
+function thisName() {
+return this.name;
+}
+console.log(user_2.this_Name());
+
+// массив из обьектов --------------------------------------------------
+var user = {
+data: [
+  {name: "jhon"},
+  {name: "Smith"}
+]
+};
+console.log(user.data[0].name);
+
+//----------------------------------------------------------------------
+class Human {
+constructor(language){
+  this.language = language;
+}
+lan(){
+  console.log(this.language);
+}
+}
+
+// наследование -----------------------
+class Person extends Human {
+constructor(name, age, language){
+  super(language);
+  this.name = name;
+  this.age = age;
+}
+sayName(){
+  console.log(this.name);
+}
+sayAge(){
+  console.log(this.age);
+}
+}
+const user_1 = new Person(`Nico`, 30, `en`);
+user_1.sayName();
+user_1.sayAge();
+user_1.lan();
+
+//---НАСЛЕДОВАНИЕ ОБЬЕКТА---------------------------------------------
+var protoMan = {name: "protoMan", color: "red"};
+var man = {name: "Man"};
+man.__proto__ = protoMan;
+console.log(man.color);
+
+//---------- .setTimeout()
+setTimeout(() => {console.log('for 1 sec')}, 5000) // запустить через 5 сек
+setInterval(() => {console.log('for 1 sec')}, 5000) //запускать каждые 5 сек
+//------------------------------------
+
+if (window.matchMedia('(max-width: 425px)').matches) {
+console.log(true);
+} else {
+console.log(false);
+}
+
+//------------------------------------
+const objMain = {
+name: 'Mari',
+age: 30
+};
+const objSub = {
+subName: "liki",
+subAge: 29
+};
+objMain['anoutheObj'] = objSub;
+console.log(objMain.anoutheObj.subName)
+
+//---увеличить пиксели в 2 раза
+about:config
+layout.css.devPixelsPerPx
+-1.0
+//---npm
+npm -g list --depth=0 //список npm пакетов
+
+//---ПРИМЕР-----DOM---------------------------------------------------------------
+const name_var = document.querySelector('#name_node');
+name_var.addEventListener('click'() => {
+name_var.innerText = 'Qwert';
+name_var.innerHTML = "&lt;b>qwert&lt;/b>";
+name_var.style.color = "green";
+name_var.style.display ='none';
+name_var.style.border = '1px solid black';
+name_var.style.fontWeight = '700';
+name_var.style.textTransform = 'uppercase';
+name_var.classList.add('myClass');
+name_var.classList.contains('myClass');
+name_var.classList.replace('oldClass', 'newClass');
+name_var.classList.remove('myClass');
+name_var.classList.toggle("add_class");
+name_var.setAttribute('src', 'new-image.jpg');
+name_var.getAttribute('src');
+name_var.removeAttribute('src');
+name_var.append(document.createElement('p'));
+name_var.insertBefore(document.createElement('h1'), document.createElement('h2'));
+name_var.remove();
+})
+
+//---if checkbokx checked----------------------------------------------------
+var name_var_chbox = document.querySelector('input');
+if (name_var_chbox.checked) { // если чекс бокс выбран;
+name_var.style.display='none'; // то name_var присвоить "скрыть";
+} else { // иначе;
+name_var.style.display='block'; // name_var присвоить "показать";
+};
+
+//--- check to exist ----------------
+if(document.querySelector('#name_node')) {
+document.querySelector('#name_node').value = 'Показать';
+}
+//--- if (условие1 && условие2) {}; -------------------------------------
+if (let a > 0 && a&lt;10 && a % 2==0) { console.log('а чётное, больше нуля, меньше десяти'); } 
+
+//--- scroll page ------------------------------------- 
+document.body.scrollTop=document.documentElement.scrollTop=305; 
+
+//--- теxt to speech ------------------------------------- 
+let msg=new SpeechSynthesisUtterance(); msg.text='Text' ;
+window.speechSynthesis.speak(msg); 
+&lt;a href="javascript&colon;history.go(-1)">back&lt;/a>
+
+=
++= // let i = 2; i+=1; (i=3)
+-= // let i = 2; i-=1; (i=1)
+== // равно
+=== // строгое равно
+!= //неравно
+> // меньше
+&lt;// больше>= // больше или равно
+&lt;= // меньше или равно + // 1+1 (2) + // 'first' +'last' ('firstlast') + // +'2' (2) - // 2-1 (1) 
+++i // let two=2; ++two (3) 
+--i // let two=2; --two (1) 
+i++ 
+i-- 
+// логические 
+|| // 0||0=0; 1||0=1; 0||1=1; (OR) 
+&& // 0&&1=0; 1&&1=1; 1&&0=0; (AND) 
+! // !true; (false) 
+// побитовые 
+^ // 0^1=1; 1^1=0; 1^0=1; (XOR) 
+~ // ~0=1;
+~1=0; (NOT) унарный НЕ 
+&lt;&lt; // 101&lt;&lt;010; (сдвиг битов влево)
+>> // 101>>010; (сдвиг битов вправо)
+>>> //сдвиг битов вправо с заполнением старшего бита нулем
               </code>
             </pre>
           </details>
@@ -850,17 +850,17 @@ if (document.getElementById("main-collection-filters")) {
             <div class="wrapper__code">
               <pre>
                 <code>            
-                  :root {
-                    --color-primary: #011222;
-                    --color-secondary: #FF5858;
-                    --font-primary: Inter;
-                    --duration: 0.4s;
-                    --desktop: 1450px;
-                    --laptop: 1440;
-                    --mobile: 430;
-                  }
+:root {
+  --color-primary: #011222;
+  --color-secondary: #FF5858;
+  --font-primary: Inter;
+  --duration: 0.4s;
+  --desktop: 1450px;
+  --laptop: 1440;
+  --mobile: 430;
+}
 
-                  var(--timer-animate);
+var(--timer-animate);
                 </code>
               </pre>
 
@@ -871,24 +871,23 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Media</span></summary>
             <pre>
               <code>                
-                1920 1440 1250 768 576 430
+1920 1440 1250 768 576 430
 
-                @media (max-width: 1024px) and (min-width: 769px) {}
+@media (max-width: 1024px) and (min-width: 769px) {}
 
-                @supports not (inset: 10px) {}
-                
-                @keyframes animateAmbient {
-                  0% {}
-                  100% {}
-                }
+@supports not (inset: 10px) {}
 
+@keyframes animateAmbient {
+  0% {}
+  100% {}
+}
 
-                .class {
-                  gap: 100px;
-                  @media screen and (max-width: 1250px) {
-                    gap: 50px;
-                  }
-                }
+.class {
+  gap: 100px;
+  @media screen and (max-width: 1250px) {
+    gap: 50px;
+  }
+}
               </code>
             </pre>
           </details>
@@ -897,23 +896,27 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Text</span></summary>
             <pre>
               <code>
-                /*first letter in string*/        
-                p::first-letter {
-                  text-transform: uppercase;
-                }
+/*first letter in string*/        
+p::first-letter {
+  text-transform: uppercase;
+}
 
-                font-family: 'Righteous';
-                font-family: 'BrunoAce-Regular';
-                font-family: 'Archivo';
-                font-family: 'Archivo-bold';
-                font-family: 'Archivo-ExtraBold';
-                font-family: 'Archivo-300';
-                font-family: 'Gilroy';
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: 300;
+font-family: 'Righteous';
+font-family: 'BrunoAce-Regular';
+font-family: 'Archivo';
+font-family: 'Archivo-bold';
+font-family: 'Archivo-ExtraBold';
+font-family: 'Archivo-300';
+font-family: 'Gilroy';
+font-size: 14px;
+line-height: 22px;
+font-weight: 300;
 
-                white-space: nowrap;
+p {
+  font: italic 700 20px/25px "Roboto";
+}
+
+white-space: nowrap;
               </code>
             </pre>
           </details>
@@ -922,9 +925,9 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Underline</span></summary>
             <pre>
               <code>
-                text-decoration: underline #3366cc solid 5px;
-                text-underline-offset: 1px;
-                text-decoration: underline wavy hotpink;
+text-decoration: underline #3366cc solid 5px;
+text-underline-offset: 1px;
+text-decoration: underline wavy hotpink;
               </code>
             </pre>
           </details>
@@ -933,10 +936,8 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Selector</span></summary>
             <pre>
               <code>
-                .class[data-position=default]
-
-                :nth-child(5)
-
+.class[data-position=default]
+:nth-child(1)
               </code>
             </pre>
           </details>
@@ -945,17 +946,17 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>After</span></summary>
             <pre>
               <code>
-                :after {
-                  content: "";
-                  display: block;
-                  width: 25px;
-                  height: 25px;
-                  background-image:
-                  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                }
+:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image:
+  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
               </code>
             </pre>
           </details>
@@ -964,19 +965,18 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Image</span></summary>
             <pre>
               <code>
-                .container {
-                  background: #101010 url('img.png') no-repeat fixed right top / cover;
-                }
+.container {
+  background: #101010 url('img.png') no-repeat fixed right top / cover;
+}
 
-                .img {
-                  filter: drop-shadow(20px 7px 5px #302E2E);
-                }
+.img {
+  filter: drop-shadow(20px 7px 5px #302E2E);
+}
 
-                background: linear-gradient(to bottom, #66c13e, #0f941a);
+background: linear-gradient(to bottom, #66c13e, #0f941a);
 
-                /*box-shadow as a single line border*/
-                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-
+/*box-shadow as a single line border*/
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
               </code>
             </pre>
           </details>
@@ -985,13 +985,13 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Input</span></summary>
             <pre>
               <code>
-                input[type=checkbox] {
-                  accent-color: white;
-                }
-                input[type=checkbox]:checked {
-                  border: none;
-                  outline: 1px solid var(--color-black);
-                }
+input[type=checkbox] {
+  accent-color: white;
+}
+input[type=checkbox]:checked {
+  border: none;
+  outline: 1px solid var(--color-black);
+}
               </code>
             </pre>
           </details>
@@ -1000,9 +1000,9 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Selector</span></summary>
             <pre>
               <code>            
-                .field__input:not(:placeholder-shown) ~ .field__label {
-                  /*code*/
-                }
+.field__input:not(:placeholder-shown) ~ .field__label {
+  /*code*/
+}
               </code>
             </pre>
           </details>
@@ -1011,11 +1011,11 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Functions</span></summary>
             <pre>
               <code>
-                var();
-                calc();
-                min();
-                max();
-                clamp();
+var();
+calc();
+min();
+max();
+clamp();
               </code>
             </pre>
           </details>
@@ -1024,24 +1024,24 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Details</span></summary>
             <pre>
               <code>
-                details summary::after {
-                  display: block;
-                  content: "";
-                  width: 10px;
-                  height: 10px;
-                  background-image:
-                  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                  margin-left: 6px;
-                  transition: .2s;
-                }
-                details[open] > summary::after {
-                  transform: rotate(180deg);
-                }
+details summary::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-image:
+  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 6px;
+  transition: .2s;
+}
+details[open] > summary::after {
+  transform: rotate(180deg);
+}
 
-                /* https://www.base64-image.de */
+/* https://www.base64-image.de */
               </code>
             </pre>
           </details>
@@ -1050,9 +1050,9 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>List</span></summary>
             <pre>
               <code>
-                ul {
-                  list-style-type: none
-                }
+ul {
+  list-style-type: none
+}
               </code>
             </pre>
           </details>
@@ -1061,7 +1061,7 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Animation</span></summary>
             <pre>
               <code>
-                transition: all 1s;
+transition: all 1s;
               </code>
             </pre>
           </details>
@@ -1070,11 +1070,11 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Grid</span></summary>
             <pre>
               <code>
-                .grid__two-four {
-                  display: grid;
-                  grid-template: repeat(2, auto) / repeat(4, 1fr);
-                  gap: 1.5rem;
-                }
+.grid__two-four {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(4, 1fr);
+  gap: 1.5rem;
+}
               </code>
             </pre>
           </details>
@@ -1083,20 +1083,20 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>3 item</span></summary>
             <pre>
               <code>
-                .wishlist__wrapper {
-                  display: flex;
-                  flex-wrap: wrap;
-                  .wish-list__card {
-                    width: 33.333333333%;
-                    img {
-                    width: 100%;
-                    height: auto;
-                    }
-                  }
-                  .wish-list__card:not(:nth-child(3n+0)) {
-                    padding-right: 12px;
-                  }
-                }
+.wishlist__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  .wish-list__card {
+    width: 33.333333333%;
+    img {
+    width: 100%;
+    height: auto;
+    }
+  }
+  .wish-list__card:not(:nth-child(3n+0)) {
+    padding-right: 12px;
+  }
+}
               </code>
             </pre>
           </details>
@@ -1105,40 +1105,40 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>aspect-r saf</span></summary>
             <pre>
               <code>
-                .coll-card-image__wrapp {
-                  width: 100%;
-                  aspect-ratio: 1 / 1;
-                  overflow: hidden;
-                  margin-bottom: 18px;
-                  align-items: center;
-                  display: flex;
-                }
-                @supports (-webkit-hyphens: none) {
-                  .coll-card-image__wrapp {
-                    width: 100%;
-                    height: calc(100% * 1/1);
-                  }
-                }
+.coll-card-image__wrapp {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 18px;
+  align-items: center;
+  display: flex;
+}
+@supports (-webkit-hyphens: none) {
+  .coll-card-image__wrapp {
+    width: 100%;
+    height: calc(100% * 1/1);
+  }
+}
 
-                picture[data-square="1.5"] {
-                  width: calc(50% - 12px);
-                  aspect-ratio: 1.25 / 1;
-                  @supports not (aspect-ratio: 1.25 / 1) {
-                    &::before {
-                      float: left;
-                      padding-top: 80%;
-                      content: "";
-                    }
-                    &::after {
-                      display: block;
-                      content: "";
-                      clear: both;
-                    }
-                  }
-                  @media screen and (max-width: 576px) {
-                    width: 100%;
-                  }
-                }
+picture[data-square="1.5"] {
+  width: calc(50% - 12px);
+  aspect-ratio: 1.25 / 1;
+  @supports not (aspect-ratio: 1.25 / 1) {
+    &::before {
+      float: left;
+      padding-top: 80%;
+      content: "";
+    }
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+}
               </code>
             </pre>
           </details>
@@ -1147,20 +1147,20 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>support saf</span></summary>
             <pre>
               <code>
-                /*support only safari*/
-                aside#main-collection-filters {
-                  position: sticky;
-                  position: -webkit-sticky;
-                  z-index: 10000;
-                  top: 157px;
-                  background: white;
-                  z-index: 1;
-                }
-                @supports (-webkit-hyphens: none) {
-                  aside#main-collection-filters {
-                    top: 0;
-                  }
-                }
+/*support only safari*/
+aside#main-collection-filters {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 10000;
+  top: 157px;
+  background: white;
+  z-index: 1;
+}
+@supports (-webkit-hyphens: none) {
+  aside#main-collection-filters {
+    top: 0;
+  }
+}
               </code>
             </pre>
           </details>
@@ -1169,9 +1169,9 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>:has</span></summary>
             <pre>
               <code>
-                .account__orders-item:has(.orders-item__detail.is-hidden) .btn-open__order-detail {
-                  transform: rotate(-180deg);
-                }
+.account__orders-item:has(.orders-item__detail.is-hidden) .btn-open__order-detail {
+  transform: rotate(-180deg);
+}
               </code>
             </pre>
           </details>
@@ -1180,14 +1180,14 @@ if (document.getElementById("main-collection-filters")) {
             <summary><span>Pseudo-class</span></summary>
             <pre>
               <code>
-                :link
-                :visited
-                :hover
-                :active
-                :target
-                :first-child
-                :last-child
-                :nth-child(2)
+:link
+:visited
+:hover
+:active
+:target
+:first-child
+:last-child
+:nth-child(2)
               </code>
             </pre>
           </details>
