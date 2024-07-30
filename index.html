@@ -11,478 +11,426 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
     <script>hljs.highlightAll();</script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+      <article>
+        <details>
+          <summary><span>Metafield</span></summary>
+          <pre>
+            <code>
+# get product metafield data
+{%- if product.metafields.custom.m_name != blank -%}
+{{ product.metafields.custom.m_name | metafield_tag }}
+{%- endif -%}
+            </code>
+          </pre>
+        </details>
 
-    <main class="" x-data="{ tab: 'tab1' }">
-      <ul class="nav">
-        <li>
-          <a href="#"
-            :class="{ 'is-active': tab == 'tab1'}" @click.prevent="tab = 'tab1'">
-            LIQUID
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            :class="{ 'is-active': tab == 'tab2'}" @click.prevent="tab = 'tab2'">
-            HTML
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            :class="{ 'is-active': tab == 'tab3'}" @click.prevent="tab = 'tab3'">
-            JAVASCRIPT
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            :class="{ 'is-active': tab == 'tab4'}" @click.prevent="tab = 'tab4'">
-            CSS
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            :class="{ 'is-active': tab == 'tab5'}" @click.prevent="tab = 'tab5'">
-            Codepen
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            :class="{ 'is-active': tab == 'tab6'}" @click.prevent="tab = 'tab6'">
-            Instagramm
-          </a>
-        </li>
-      </ul>
-      <div class="tab__content-wrapper">
-        <div x-show="tab == 'tab1'" class="tab__content liquid">
+        <details>
+          <summary><span>Menu</span></summary>
+          <pre>
+            <code>
+# get from link menu image collection
+{{ childlink.object.image }}
+            </code>
+          </pre>
+        </details>
 
-          <div x-data="{ open: false }" class="component__wrapper">
-            <button @click="open = ! open">Metafield</button>
-            <div x-show="open" class="component__code">
-              <pre>
-                <code>            
-  # get product metafield data
-  {%- if product.metafields.custom.m_name != blank -%}
-    {{ product.metafields.custom.m_name | metafield_tag }}
-  {%- endif -%}
-                </code>
-              </pre>
-            </div>
-          </div>
-
-          <div x-data="{ open: false }" class="component__wrapper">
-            <button @click="open = ! open">Menu</button>
-            <div x-show="open" class="component__code">
-              <pre>
-                <code>            
-  # get from link menu image collection
-  {{ childlink.object.image }}
-                </code>
-              </pre>
-            </div>
-          </div>
-
-          <div x-data="{ open: false }" class="component__wrapper">
-            <button @click="open = ! open">File</button>
-            <div x-show="open" class="component__code">
-              <pre>
-                <code>            
+        <details>
+          <summary><span>File</span></summary>
+          <pre>
+            <code>
   {% assign my_variable = false %}
   {% render 'filename' %}
   
   {{ 'file.css' | asset_url | stylesheet_tag }}
-                </code>
-              </pre>
-            </div>
-          </div>
+            </code>
+          </pre>
+        </details>
 
-          <div x-data="{ open: false }" class="component__wrapper">
-            <button @click="open = ! open">Image picker</button>
-            <div x-show="open" class="component__code">
-              <pre>
-                <code>            
-  {
-    "type": "image_picker",
-    "id": "account_image",
-    "label": "Image for account"
-  }
-  {{
-    section.settings.account_image
-    | image_url: width: 364
-    | image_tag: class: 'account__image', loading: 'lazy'
-  }}
-                </code>
-              </pre>
-            </div>
-          </div>
+        <details>
+          <summary><span>Image picker</span></summary>
+          <pre>
+            <code>
+{
+  "type": "image_picker",
+  "id": "account_image",
+  "label": "Image for account"
+}
+{{
+  section.settings.account_image
+  | image_url: width: 364
+  | image_tag: class: 'account__image', loading: 'lazy'
+}}
+            </code>
+          </pre>
+        </details>
 
-
-          <details>
-            <summary><span>for in order</span></summary>
-            <pre>
-              <code>            
-                {%- for order_item in order.line_items -%}
-                  {%- for prod_image in order_item.product.images -%}
-                    {{ prod_image | image_url: width: 150 | image_tag: class: 'order-item__image', loading: 'lazy' }}
-                  {%- endfor -%}
+        <details>
+          <summary><span>for in order</span></summary>
+          <pre>
+            <code>            
+              {%- for order_item in order.line_items -%}
+                {%- for prod_image in order_item.product.images -%}
+                  {{ prod_image | image_url: width: 150 | image_tag: class: 'order-item__image', loading: 'lazy' }}
                 {%- endfor -%}
-              </code>
-            </pre>
-          </details>
+              {%- endfor -%}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>for in index</span></summary>
-            <pre>
-              <code>            
-                {%- for address in customer.addresses -%}
-                  {{ forloop.index }}
-                {%- endfor -%}
-              </code>
-            </pre>
-          </details>
+        <details>
+          <summary><span>for in index</span></summary>
+          <pre>
+            <code>            
+              {%- for address in customer.addresses -%}
+                {{ forloop.index }}
+              {%- endfor -%}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>for in blog</span></summary>
-            <pre>
-              <code>            
-                  {% for article in blogs.news.articles %}
-                    {{- article.title | link_to: article.url }}
-                  {% endfor %}
-              </code>
-            </pre>
-          </details>
+        <details>
+          <summary><span>for in blog</span></summary>
+          <pre>
+            <code>            
+                {% for article in blogs.news.articles %}
+                  {{- article.title | link_to: article.url }}
+                {% endfor %}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>form</span></summary>
-            <pre>
-              <code>            
-                {% form 'customer_login', return_to: routes.root_url %}
-                  &lt;!-- form content --&gt;
-                {% endform %}
-              </code>
-            </pre>
-          </details>
+        <details>
+          <summary><span>form</span></summary>
+          <pre>
+            <code>            
+              {% form 'customer_login', return_to: routes.root_url %}
+                &lt;!-- form content --&gt;
+              {% endform %}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>order</span></summary>
-            <pre>
-              <code>            
-                {%- if customer.orders_count == 0 -%}
-                  <p>You haven`t placed any orders yet</p>
-                  <a href="{{ routes.collections_url }}">Go Shopping</a>
+        <details>
+          <summary><span>order</span></summary>
+          <pre>
+            <code>            
+              {%- if customer.orders_count == 0 -%}
+                <p>You haven`t placed any orders yet</p>
+                <a href="{{ routes.collections_url }}">Go Shopping</a>
+              {% else %}
+              {%- endif -%}
+
+              {%- if order.line_items -%}
                 {% else %}
-                {%- endif -%}
+              {%- endif -%}
+            </code>
+          </pre>
+        </details>
 
-                {%- if order.line_items -%}
-                  {% else %}
-                {%- endif -%}
-              </code>
-            </pre>
-          </details>
-
-          <details>
-            <summary><span>section</span></summary>
-            <pre>
-              <code>            
-                {{ 'about-us.css' | asset_url | stylesheet_tag }}
-                
-                {%- style -%}
+        <details>
+          <summary><span>section</span></summary>
+          <pre>
+            <code>            
+              {{ 'about-us.css' | asset_url | stylesheet_tag }}
+              
+              {%- style -%}
+                .section-{{ section.id }}-padding {
+                  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+                  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+                }
+              
+                @media screen and (min-width: 750px) {
                   .section-{{ section.id }}-padding {
-                    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-                    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+                    padding-top: {{ section.settings.padding_top }}px;
+                    padding-bottom: {{ section.settings.padding_bottom }}px;
                   }
-                
-                  @media screen and (min-width: 750px) {
-                    .section-{{ section.id }}-padding {
-                      padding-top: {{ section.settings.padding_top }}px;
-                      padding-bottom: {{ section.settings.padding_bottom }}px;
-                    }
-                  }
-                {%- endstyle -%}
-                
-                &lt;div class="about-us__wrapper page-width section-{{ section.id }}-padding"&gt;
-                  &lt;h1>{{ section.settings.title }}&lt;/h1&gt;
-                  &lt;p>{{ section.settings.content_1 }}&lt;/p&gt;
-                  &lt;div>
-                    {%- if section.settings.image_1 != blank and section.settings.image_2 != blank -%}
-                    {{ section.settings.image_1 | image_url: width: 100 | image_tag: class: '__image', loading: 'lazy' }}
-                    {{ section.settings.image_2 | image_url: width: 100 | image_tag: class: '__image', loading: 'lazy' }}
-                    {%- endif -%}
-                  &lt;/div&gt;
+                }
+              {%- endstyle -%}
+              
+              &lt;div class="about-us__wrapper page-width section-{{ section.id }}-padding"&gt;
+                &lt;h1>{{ section.settings.title }}&lt;/h1&gt;
+                &lt;p>{{ section.settings.content_1 }}&lt;/p&gt;
+                &lt;div>
+                  {%- if section.settings.image_1 != blank and section.settings.image_2 != blank -%}
+                  {{ section.settings.image_1 | image_url: width: 100 | image_tag: class: '__image', loading: 'lazy' }}
+                  {{ section.settings.image_2 | image_url: width: 100 | image_tag: class: '__image', loading: 'lazy' }}
+                  {%- endif -%}
                 &lt;/div&gt;
-                
-                &lt;script&gt;
-                  document.addEventListener('DOMContentLoaded', () =&gt; { });
-                &lt;/script&gt;
-                
-                {% schema %}
-                  {
-                    "name": "About us",
-                    "tag": "section",
-                    "class": "page__about-us",
-                    "settings": [
-                      {
-                        "type": "header",
-                        "content": "t:sections.all.padding.section_padding_heading"
-                      },
-                      {
-                        "type": "range",
-                        "id": "padding_top",
-                        "min": 0,
-                        "max": 100,
-                        "step": 4,
-                        "unit": "px",
-                        "label": "t:sections.all.padding.padding_top",
-                        "default": 36
-                      },
-                      {
-                        "type": "range",
-                        "id": "padding_bottom",
-                        "min": 0,
-                        "max": 100,
-                        "step": 4,
-                        "unit": "px",
-                        "label": "t:sections.all.padding.padding_bottom",
-                        "default": 36
-                      },
-                      {
-                        "type": "text",
-                        "id": "nav_logout",
-                        "label": "Menu item for the logout",
-                        "default": "Sign Out"
-                      },
-                      {
-                        "type": "image_picker",
-                        "id": "account_image",
-                        "label": "Image for account"
-                      },
-                      {
-                        "id": "blog",
-                        "type": "blog",
-                        "label": "Blog"
-                      }
-                    ]
-                  }
-                {% endschema %}
-              </code>
-            </pre>
-          </details>
-        </div>
+              &lt;/div&gt;
+              
+              &lt;script&gt;
+                document.addEventListener('DOMContentLoaded', () =&gt; { });
+              &lt;/script&gt;
+              
+              {% schema %}
+                {
+                  "name": "About us",
+                  "tag": "section",
+                  "class": "page__about-us",
+                  "settings": [
+                    {
+                      "type": "header",
+                      "content": "t:sections.all.padding.section_padding_heading"
+                    },
+                    {
+                      "type": "range",
+                      "id": "padding_top",
+                      "min": 0,
+                      "max": 100,
+                      "step": 4,
+                      "unit": "px",
+                      "label": "t:sections.all.padding.padding_top",
+                      "default": 36
+                    },
+                    {
+                      "type": "range",
+                      "id": "padding_bottom",
+                      "min": 0,
+                      "max": 100,
+                      "step": 4,
+                      "unit": "px",
+                      "label": "t:sections.all.padding.padding_bottom",
+                      "default": 36
+                    },
+                    {
+                      "type": "text",
+                      "id": "nav_logout",
+                      "label": "Menu item for the logout",
+                      "default": "Sign Out"
+                    },
+                    {
+                      "type": "image_picker",
+                      "id": "account_image",
+                      "label": "Image for account"
+                    },
+                    {
+                      "id": "blog",
+                      "type": "blog",
+                      "label": "Blog"
+                    }
+                  ]
+                }
+              {% endschema %}
+            </code>
+          </pre>
+        </details>
+      </article>
 
-        <div x-show="tab == 'tab2'" class="tab__content html">
-          <details>
-            <summary><span>Marquee</span></summary>
-            <pre>
-              <code>         
-                &lt;!-- run string https://www.npmjs.com/package/jquery.marquee --&gt;
-                &lt;p class="marquee" style="overflow:hidden"&gt;
-                  &lt;span&gt;Text&lt;/span&gt;
-                &lt;/p&gt;
-              </code>
-            </pre>
-          </details>
+      <article>
+        <details>
+          <summary><span>Marquee</span></summary>
+          <pre>
+            <code>         
+              &lt;!-- run string https://www.npmjs.com/package/jquery.marquee --&gt;
+              &lt;p class="marquee" style="overflow:hidden"&gt;
+                &lt;span&gt;Text&lt;/span&gt;
+              &lt;/p&gt;
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Figure</span></summary>
-            <pre>
-              <code>         
-                &lt;figure&gt;
-                  &lt;img src="./img.png" alt=""&gt;
-                  &lt;figcaption&gt;Text&lt;/figcaption&gt;
-                &lt;/figure&gt;
-              </code>
-            </pre>
-          </details>
-        </div>
+        <details>
+          <summary><span>Figure</span></summary>
+          <pre>
+            <code>         
+              &lt;figure&gt;
+                &lt;img src="./img.png" alt=""&gt;
+                &lt;figcaption&gt;Text&lt;/figcaption&gt;
+              &lt;/figure&gt;
+            </code>
+          </pre>
+        </details>
+      </article>
 
-        <div x-show="tab == 'tab3'" class="tab__content javascript">
-          <details>
-            <summary><span>JS</span></summary>
-            <pre>
-              <code>            
+      <article>
+        <details>
+          <summary><span>JS</span></summary>
+          <pre>
+            <code>            
 document.addEventListener('DOMContentLoaded', () => {});
 setTimeout(() => {}, 500);
 
 setTimeout(() => {
-  let btnString = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta');
-  let btnStringData = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta')?.innerText;
-  let btnStringNew = btnStringData?.replace('To', 'to');
-  btnString.innerText = btnStringNew;
+let btnString = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta');
+let btnStringData = document.querySelector('.product_main .product-form__buttons span.swym-wishlist-cta')?.innerText;
+let btnStringNew = btnStringData?.replace('To', 'to');
+btnString.innerText = btnStringNew;
 }, 3000);
 
 if (document.getElementById("main-collection-filters")) {
-  window.addEventListener('scroll', function () {
-  let elem = document.getElementById("main-collection-filters");
-  let topCoord = elem.getBoundingClientRect().top;
-  if (topCoord &lt; 56) { elem.style.opacity=0; } if (topCoord> 50) {
-    elem.style.opacity = 1;
-    }
-  });
+window.addEventListener('scroll', function () {
+let elem = document.getElementById("main-collection-filters");
+let topCoord = elem.getBoundingClientRect().top;
+if (topCoord &lt; 56) { elem.style.opacity=0; } if (topCoord> 50) {
+  elem.style.opacity = 1;
+  }
+});
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Screen</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Screen</span></summary>
+          <pre>
+            <code>            
 window.addEventListener("orientationchange", function() {
-  //code
+//code
 }, false);
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Scroll</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Scroll</span></summary>
+          <pre>
+            <code>            
 //hide megamenu when scroll
 let megamenuDetails = document.querySelectorAll("header-menu details");
-  window.onscroll = () => {
-    megamenuDetails.forEach((item) => {
-    item.open = false;
-  });
+window.onscroll = () => {
+  megamenuDetails.forEach((item) => {
+  item.open = false;
+});
 }
 
 element.scrollIntoView();
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Event</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Event</span></summary>
+          <pre>
+            <code>            
 const element = document.querySelector("#box");
 element.addEventListener("mouseover", event => {
-  console.log("Mouse in (over)");
+console.log("Mouse in (over)");
 });
 element.addEventListener("mouseout", event => {
-  console.log("Mouse out");
+console.log("Mouse out");
 });
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Class</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Class</span></summary>
+          <pre>
+            <code>            
 node.closest('.next-node');
 node.classList.add("active");
 node.classList.remove("active");
 node.classList.toggle("active");
 node.className = node.className.replace(" active", "");
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Load</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Load</span></summary>
+          <pre>
+            <code>            
 //if elment is insert to DOM
 document.addEventListener('DOMContentLoaded', () => {
+let i = setInterval(function() {
+  if (document.querySelector("#insta-feed")){
+    clearInterval(i);
+  }
+}, 1000);
+setTimeout(function(){
+  //code when element is insrt to DOM
+},1000)
+
+//when screen rotated
+window.addEventListener("orientationchange", function() {
   let i = setInterval(function() {
     if (document.querySelector("#insta-feed")){
       clearInterval(i);
     }
   }, 1000);
   setTimeout(function(){
-    //code when element is insrt to DOM
+    //code if screen rotated
   },1000)
-  
-  //when screen rotated
-  window.addEventListener("orientationchange", function() {
-    let i = setInterval(function() {
-      if (document.querySelector("#insta-feed")){
-        clearInterval(i);
-      }
-    }, 1000);
-    setTimeout(function(){
-      //code if screen rotated
-    },1000)
-  }, false);
+}, false);
 });
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Click</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Click</span></summary>
+          <pre>
+            <code>            
 // remove if click not an element
 window.addEventListener('click', e => {
-  const target = e.target
-  if (!target.closest('.hero__content-form')
-      && !target.closest('.btn-form')
-      && !target.closest(`a[href="#${anchor}"]`)
-      && !target.closest(`.footer__quicklinks a[href="#${anchor}"]`)
-    ) {
-    if (homeContactForm) {
-      homeContactForm.classList.remove('show')
-      btnOverlay.classList.remove('active');
-    }
+const target = e.target
+if (!target.closest('.hero__content-form')
+    && !target.closest('.btn-form')
+    && !target.closest(`a[href="#${anchor}"]`)
+    && !target.closest(`.footer__quicklinks a[href="#${anchor}"]`)
+  ) {
+  if (homeContactForm) {
+    homeContactForm.classList.remove('show')
+    btnOverlay.classList.remove('active');
   }
+}
 })
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Form</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Form</span></summary>
+          <pre>
+            <code>            
 form.reset();
 input.blur();
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Method</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Method</span></summary>
+          <pre>
+            <code>            
 item.nextElementSibling.classList.toggle('is-hidden');
 
 let arr = document.querySelectorAll('.selector');
 arr.forEach((item, index) => {
-  let itemChaild = item.querySelector('.sub-selector');
-  item.addEventListener('mouseover', () => {});
-  item.addEventListener('mouseout', () => {});
+let itemChaild = item.querySelector('.sub-selector');
+item.addEventListener('mouseover', () => {});
+item.addEventListener('mouseout', () => {});
 });
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Clear form</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Clear form</span></summary>
+          <pre>
+            <code>            
 //clear input
 let popupWrapField = document.querySelectorAll('.popup__field-wrap');
 popupWrapField.forEach((item) => {
-  let fieldClear = item.querySelector('input');
-  let btnClear = item.querySelector('.popup__btn-clear');
-  btnClear.addEventListener('click', () => {
-    fieldClear.value = '';
-  });
+let fieldClear = item.querySelector('input');
+let btnClear = item.querySelector('.popup__btn-clear');
+btnClear.addEventListener('click', () => {
+  fieldClear.value = '';
 });
-              </code>
-            </pre>
-          </details>
+});
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Notes</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Notes</span></summary>
+          <pre>
+            <code>            
 //--- DATA STRUCTURES --------------------------------------
 const arrEmp = [];
 const arrNum = [1, 2, 3, 4, 5]
@@ -698,8 +646,8 @@ console.log(user_2.this_Name());
 // массив из обьектов --------------------------------------------------
 var user = {
 data: [
-  {name: "jhon"},
-  {name: "Smith"}
+{name: "jhon"},
+{name: "Smith"}
 ]
 };
 console.log(user.data[0].name);
@@ -707,25 +655,25 @@ console.log(user.data[0].name);
 //----------------------------------------------------------------------
 class Human {
 constructor(language){
-  this.language = language;
+this.language = language;
 }
 lan(){
-  console.log(this.language);
+console.log(this.language);
 }
 }
 
 // наследование -----------------------
 class Person extends Human {
 constructor(name, age, language){
-  super(language);
-  this.name = name;
-  this.age = age;
+super(language);
+this.name = name;
+this.age = age;
 }
 sayName(){
-  console.log(this.name);
+console.log(this.name);
 }
 sayAge(){
-  console.log(this.age);
+console.log(this.age);
 }
 }
 const user_1 = new Person(`Nico`, 30, `en`);
@@ -839,38 +787,38 @@ i--
 &lt;&lt; // 101&lt;&lt;010; (сдвиг битов влево)
 >> // 101>>010; (сдвиг битов вправо)
 >>> //сдвиг битов вправо с заполнением старшего бита нулем
-              </code>
-            </pre>
-          </details>
-        </div>
+            </code>
+          </pre>
+        </details>
+      </article>
 
-        <div x-show="tab == 'tab4'" class="tab__content css">
-          <details>
-            <summary><span>Root</span></summary>
-            <div class="wrapper__code">
-              <pre>
-                <code>            
+      <article>
+        <details>
+          <summary><span>Root</span></summary>
+          <div class="wrapper__code">
+            <pre>
+              <code>            
 :root {
-  --color-primary: #011222;
-  --color-secondary: #FF5858;
-  --font-primary: Inter;
-  --duration: 0.4s;
-  --desktop: 1450px;
-  --laptop: 1440;
-  --mobile: 430;
+--color-primary: #011222;
+--color-secondary: #FF5858;
+--font-primary: Inter;
+--duration: 0.4s;
+--desktop: 1450px;
+--laptop: 1440;
+--mobile: 430;
 }
 
 var(--timer-animate);
-                </code>
-              </pre>
+              </code>
+            </pre>
 
-            </div>
-          </details>
-          
-          <details>
-            <summary><span>Media</span></summary>
-            <pre>
-              <code>                
+          </div>
+        </details>
+        
+        <details>
+          <summary><span>Media</span></summary>
+          <pre>
+            <code>                
 1920 1440 1250 768 576 430
 
 @media (max-width: 1024px) and (min-width: 769px) {}
@@ -878,27 +826,27 @@ var(--timer-animate);
 @supports not (inset: 10px) {}
 
 @keyframes animateAmbient {
-  0% {}
-  100% {}
+0% {}
+100% {}
 }
 
 .class {
-  gap: 100px;
-  @media screen and (max-width: 1250px) {
-    gap: 50px;
-  }
+gap: 100px;
+@media screen and (max-width: 1250px) {
+  gap: 50px;
 }
-              </code>
-            </pre>
-          </details>
+}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Text</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Text</span></summary>
+          <pre>
+            <code>
 /*first letter in string*/        
 p::first-letter {
-  text-transform: uppercase;
+text-transform: uppercase;
 }
 
 font-family: 'Righteous';
@@ -913,273 +861,273 @@ line-height: 22px;
 font-weight: 300;
 
 p {
-  font: italic 700 20px/25px "Roboto";
+font: italic 700 20px/25px "Roboto";
 }
 
 white-space: nowrap;
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Underline</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Underline</span></summary>
+          <pre>
+            <code>
 text-decoration: underline #3366cc solid 5px;
 text-underline-offset: 1px;
 text-decoration: underline wavy hotpink;
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Selector</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Selector</span></summary>
+          <pre>
+            <code>
 .class[data-position=default]
 :nth-child(1)
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>After</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>After</span></summary>
+          <pre>
+            <code>
 :after {
-  content: "";
-  display: block;
-  width: 25px;
-  height: 25px;
-  background-image:
-  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+content: "";
+display: block;
+width: 25px;
+height: 25px;
+background-image:
+url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Image</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Image</span></summary>
+          <pre>
+            <code>
 .container {
-  background: #101010 url('img.png') no-repeat fixed right top / cover;
+background: #101010 url('img.png') no-repeat fixed right top / cover;
 }
 
 .img {
-  filter: drop-shadow(20px 7px 5px #302E2E);
+filter: drop-shadow(20px 7px 5px #302E2E);
 }
 
 background: linear-gradient(to bottom, #66c13e, #0f941a);
 
 /*box-shadow as a single line border*/
 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Input</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Input</span></summary>
+          <pre>
+            <code>
 input[type=checkbox] {
-  accent-color: white;
+accent-color: white;
 }
 input[type=checkbox]:checked {
-  border: none;
-  outline: 1px solid var(--color-black);
+border: none;
+outline: 1px solid var(--color-black);
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Selector</span></summary>
-            <pre>
-              <code>            
+        <details>
+          <summary><span>Selector</span></summary>
+          <pre>
+            <code>            
 .field__input:not(:placeholder-shown) ~ .field__label {
-  /*code*/
+/*code*/
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Functions</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Functions</span></summary>
+          <pre>
+            <code>
 var();
 calc();
 min();
 max();
 clamp();
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Details</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Details</span></summary>
+          <pre>
+            <code>
 details summary::after {
-  display: block;
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-image:
-  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-left: 6px;
-  transition: .2s;
+display: block;
+content: "";
+width: 10px;
+height: 10px;
+background-image:
+url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+margin-left: 6px;
+transition: .2s;
 }
 details[open] > summary::after {
-  transform: rotate(180deg);
+transform: rotate(180deg);
 }
 
 /* https://www.base64-image.de */
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>List</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>List</span></summary>
+          <pre>
+            <code>
 ul {
-  list-style-type: none
+list-style-type: none
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Animation</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Animation</span></summary>
+          <pre>
+            <code>
 transition: all 1s;
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Grid</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Grid</span></summary>
+          <pre>
+            <code>
 .grid__two-four {
-  display: grid;
-  grid-template: repeat(2, auto) / repeat(4, 1fr);
-  gap: 1.5rem;
+display: grid;
+grid-template: repeat(2, auto) / repeat(4, 1fr);
+gap: 1.5rem;
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>3 item</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>3 item</span></summary>
+          <pre>
+            <code>
 .wishlist__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  .wish-list__card {
-    width: 33.333333333%;
-    img {
-    width: 100%;
-    height: auto;
-    }
-  }
-  .wish-list__card:not(:nth-child(3n+0)) {
-    padding-right: 12px;
+display: flex;
+flex-wrap: wrap;
+.wish-list__card {
+  width: 33.333333333%;
+  img {
+  width: 100%;
+  height: auto;
   }
 }
-              </code>
-            </pre>
-          </details>
+.wish-list__card:not(:nth-child(3n+0)) {
+  padding-right: 12px;
+}
+}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>aspect-r saf</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>aspect-r saf</span></summary>
+          <pre>
+            <code>
 .coll-card-image__wrapp {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  margin-bottom: 18px;
-  align-items: center;
-  display: flex;
+width: 100%;
+aspect-ratio: 1 / 1;
+overflow: hidden;
+margin-bottom: 18px;
+align-items: center;
+display: flex;
 }
 @supports (-webkit-hyphens: none) {
-  .coll-card-image__wrapp {
-    width: 100%;
-    height: calc(100% * 1/1);
-  }
+.coll-card-image__wrapp {
+  width: 100%;
+  height: calc(100% * 1/1);
+}
 }
 
 picture[data-square="1.5"] {
-  width: calc(50% - 12px);
-  aspect-ratio: 1.25 / 1;
-  @supports not (aspect-ratio: 1.25 / 1) {
-    &::before {
-      float: left;
-      padding-top: 80%;
-      content: "";
-    }
-    &::after {
-      display: block;
-      content: "";
-      clear: both;
-    }
+width: calc(50% - 12px);
+aspect-ratio: 1.25 / 1;
+@supports not (aspect-ratio: 1.25 / 1) {
+  &::before {
+    float: left;
+    padding-top: 80%;
+    content: "";
   }
-  @media screen and (max-width: 576px) {
-    width: 100%;
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
   }
 }
-              </code>
-            </pre>
-          </details>
+@media screen and (max-width: 576px) {
+  width: 100%;
+}
+}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>support saf</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>support saf</span></summary>
+          <pre>
+            <code>
 /*support only safari*/
 aside#main-collection-filters {
-  position: sticky;
-  position: -webkit-sticky;
-  z-index: 10000;
-  top: 157px;
-  background: white;
-  z-index: 1;
+position: sticky;
+position: -webkit-sticky;
+z-index: 10000;
+top: 157px;
+background: white;
+z-index: 1;
 }
 @supports (-webkit-hyphens: none) {
-  aside#main-collection-filters {
-    top: 0;
-  }
+aside#main-collection-filters {
+  top: 0;
 }
-              </code>
-            </pre>
-          </details>
+}
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>:has</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>:has</span></summary>
+          <pre>
+            <code>
 .account__orders-item:has(.orders-item__detail.is-hidden) .btn-open__order-detail {
-  transform: rotate(-180deg);
+transform: rotate(-180deg);
 }
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
-          <details>
-            <summary><span>Pseudo-class</span></summary>
-            <pre>
-              <code>
+        <details>
+          <summary><span>Pseudo-class</span></summary>
+          <pre>
+            <code>
 :link
 :visited
 :hover
@@ -1188,84 +1136,79 @@ aside#main-collection-filters {
 :first-child
 :last-child
 :nth-child(2)
-              </code>
-            </pre>
-          </details>
+            </code>
+          </pre>
+        </details>
 
+      </article>
+
+      <!-- <article class="codepen">
+        <div class="codepen__wrapper-item">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="YzBgrjJ"
+            data-pen-title="ToDoInCSS" data-user="Aleksej579"
+            style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/YzBgrjJ">
+                ToDoInCSS</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
         </div>
 
-        <div x-show="tab == 'tab5'" class="tab__content codepen">
-          <div class="codepen__wrapper-item">
-            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="YzBgrjJ"
-              data-pen-title="ToDoInCSS" data-user="Aleksej579"
-              style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-              <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/YzBgrjJ">
-                  ToDoInCSS</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-            </p>
-            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-          </div>
-
-          <div class="codepen__wrapper-item">
-            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="MWxeoLm"
-              data-pen-title="Image Hover Filter" data-user="Aleksej579"
-              style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-              <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/MWxeoLm">
-                  Image Hover Filter</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-            </p>
-            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-          </div>
-
-          <div class="codepen__wrapper-item">
-            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="XWGxEVz"
-              data-pen-title="Accordion" data-user="Aleksej579"
-              style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-              <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/XWGxEVz">
-                  Accordion</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-            </p>
-            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-          </div>
-
-          <div class="codepen__wrapper-item">
-            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="WNBVdzO"
-              data-pen-title="Radio button as checkbox" data-user="Aleksej579"
-              style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-              <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/WNBVdzO">
-                  Radio button as checkbox</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-            </p>
-            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-          </div>
-
-          <div class="codepen__wrapper-item">
-            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="PorowMN"
-              data-pen-title="switches" data-user="Aleksej579"
-              style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-              <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/PorowMN">
-                  switches</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-            </p>
-            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-          </div>
-
+        <div class="codepen__wrapper-item">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="MWxeoLm"
+            data-pen-title="Image Hover Filter" data-user="Aleksej579"
+            style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/MWxeoLm">
+                Image Hover Filter</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
         </div>
 
-        <div x-show="tab == 'tab6'" class="tab__content instagramm">
-          <div class="instagramm__wrapper-item">
-
-
-
-          </div>
+        <div class="codepen__wrapper-item">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="XWGxEVz"
+            data-pen-title="Accordion" data-user="Aleksej579"
+            style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/XWGxEVz">
+                Accordion</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
         </div>
-      </div>
+
+        <div class="codepen__wrapper-item">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="WNBVdzO"
+            data-pen-title="Radio button as checkbox" data-user="Aleksej579"
+            style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/WNBVdzO">
+                Radio button as checkbox</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+
+        <div class="codepen__wrapper-item">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="PorowMN"
+            data-pen-title="switches" data-user="Aleksej579"
+            style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Aleksej579/pen/PorowMN">
+                switches</a> by Aleksej579 (<a href="https://codepen.io/Aleksej579">@Aleksej579</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+
+      </article>
+
+      <article class="instagramm">
+        <div class="instagramm__wrapper-item">
+
+
+
+        </div>
+      </article> -->
     </main>
 
-    <script>
-
-    </script>
-    
     <script type="module" src="/main.js"></script>
   </body>
 </html>
