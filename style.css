@@ -26,21 +26,60 @@ main {
   display: flex;
   min-height: 100vh;
   position: relative;
-
+  
   article {
     width: 25%;
-    border: 18px solid var(--color__grapfit-light);
-    background: #20232A url('./public/bg-opacity.png') no-repeat right top / cover;
     height: 80vh;
-    overflow: auto;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    margin: 30px;
+
     display: flex;
     flex-direction: column;
     row-gap: 23px;
     padding: 18px;
-    margin: 30px;
+    overflow: auto;
+    border: 18px solid var(--color__grapfit-light);
+    background: #20232A url('/bg-opacity.png') no-repeat right top / cover;
+
+    /* .cube__wrapper {
+      height: 100%;
+      width: 100%;
+      transition: 1.5s ease;
+      transform-style: preserve-3d;
+      transform: rotate3d(1, 1, 1, 0deg);
+
+      .side-c,
+      .side-l,
+      .side-b,
+      .side-r {
+        position: absolute;
+        width: calc(100% - 72px);
+        height: calc(100% - 72px);
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 23px;
+        padding: 18px;
+        overflow: auto;
+        border: 18px solid var(--color__grapfit-light);
+        background: #20232A url('/bg-opacity.png') no-repeat right top / cover;
+        backface-visibility: inherit;
+      }
+      .side-c {
+        transform: translateZ(10vw);
+      }
+      .side-l {
+        transform: rotateY(-90deg) translateZ(10vw);
+      }
+      .side-b {
+        transform: rotateY(180deg) translateZ(10vw);
+      }
+      .side-r {
+        transform: rotateY(90deg) translateZ(10vw);
+      }
+    } */
 
     details {
       box-shadow: 7px 7px 7px #00000040;
@@ -59,7 +98,7 @@ main {
           font-size: 18px;
           font-weight: 900;
           text-align: center;
-          }
+        }
       }
     }
     
@@ -81,22 +120,27 @@ main {
         cursor: pointer;
         background-color: var(--color__sand);
 
-        & ::after {
+        &::after {
           content: "X";
           display: block;
           width: 25px;
           height: 25px;
-          /* background-image:
-          url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACGSURBVHgBlZExDoAgDEWpLiwkhoTdkdEreFLP4eTsDRg9AAM3QGqiIYq0dKHh//8aaG+tHbXWizFm994H0VB3Vim1dlLKAABTjHFDoQWCGcwmxgD5JfZJmJ1zBweS+6EmciFXzzFxdOBOpIZ8QKUQntSzi6A37DFX/u4XJET7NgUFSzVQvhPzUm/JJTTvJQAAAABJRU5ErkJggg==);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain; */
+          background-color: var(--color__white);
+          right: 6px;
+          top: 6px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--color__revolver);
+          border-radius: 3px;
         }
 
         span {
-          display: flex;
+          /* display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-between; */
+          display: none;
         }
       }
       pre {
@@ -104,39 +148,29 @@ main {
         border-color: var(--color__fringy-flower);
         background-color: var(--color__fringy-flower);
         box-shadow: inset 15px 15px 15px #00000040;
-        white-space: pre-line;
         margin: 0;
         code {
           background: none;
           text-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
           padding: 0 0 0 15px;
+          font-size: 16px;
+          line-height: 23px;
         }
       }
     }
-    /* details:not([open]):hover {
-      border-color: var(--color__pompadour);
-      background-color: var(--color__pink);
-    } */
   }
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
