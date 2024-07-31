@@ -19,13 +19,19 @@
   --color__sand: #E5D1BA;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
-
+@font-face {
+  font-family: SignikaNegative-Regular;
+  src: url(./src/font/SignikaNegative-Regular.ttf);
+}
+@font-face {
+  font-family: SignikaNegative-Bold;
+  src: url(./src/font/SignikaNegative-Bold.ttf);
+}
 
 body {
   background: var(--color__grapfit-dark);
   margin: 0;
-  font-family: "Signika Negative", sans-serif;
+  font-family: SignikaNegative-Regular;
 }
 main {
   display: flex;
@@ -39,7 +45,6 @@ main {
     -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     margin: 30px;
-
     display: flex;
     flex-direction: column;
     row-gap: 23px;
@@ -47,44 +52,6 @@ main {
     overflow: auto;
     border: 18px solid var(--color__grapfit-light);
     background: #20232A url('/bg-opacity.png') no-repeat right top / cover;
-
-    /* .cube__wrapper {
-      height: 100%;
-      width: 100%;
-      transition: 1.5s ease;
-      transform-style: preserve-3d;
-      transform: rotate3d(1, 1, 1, 0deg);
-
-      .side-c,
-      .side-l,
-      .side-b,
-      .side-r {
-        position: absolute;
-        width: calc(100% - 72px);
-        height: calc(100% - 72px);
-
-        display: flex;
-        flex-direction: column;
-        row-gap: 23px;
-        padding: 18px;
-        overflow: auto;
-        border: 18px solid var(--color__grapfit-light);
-        background: #20232A url('/bg-opacity.png') no-repeat right top / cover;
-        backface-visibility: inherit;
-      }
-      .side-c {
-        transform: translateZ(10vw);
-      }
-      .side-l {
-        transform: rotateY(-90deg) translateZ(10vw);
-      }
-      .side-b {
-        transform: rotateY(180deg) translateZ(10vw);
-      }
-      .side-r {
-        transform: rotateY(90deg) translateZ(10vw);
-      }
-    } */
 
     details {
       box-shadow: 7px 7px 7px #00000040;
@@ -111,35 +78,33 @@ main {
       cursor: auto;
       background: none;
       padding: 0;
-      color: white;
+      color: var(--color__white);
       position: absolute;
       top: 10%;
       left: 50%;
       transform: translate(-50%, 0);
       width: 60%;
       max-height: 600px;
-      /* overflow: auto; */
-      /* overflow: hidden; */
       border: 6px solid var(--color__white);
     
       summary {
-        cursor: pointer;
-        background-color: var(--color__sand);
-
         &::after {
-          content: "X";
+          content: "x";
           display: block;
           width: 25px;
           height: 25px;
           background-color: var(--color__white);
-          right: 6px;
-          top: 6px;
+          right: 12px;
+          top: 10px;
           position: absolute;
           display: flex;
           align-items: center;
           justify-content: center;
           color: var(--color__revolver);
           border-radius: 3px;
+          font-family: SignikaNegative-Bold;
+          line-height: 25px;
+          cursor: pointer;
         }
 
         span {
@@ -149,17 +114,17 @@ main {
       pre {
         border-width: 9px;
         border-color: var(--color__fringy-flower);
-        background-color: var(--color__fringy-flower);
+        background-color: var(--color__sand);
         box-shadow: inset 15px 15px 15px #00000040;
         margin: 0;
-        overflow: scroll;
+        overflow: auto;
         max-height: 600px;
         code {
           background: none;
-          text-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
           padding: 0 0 0 15px;
           font-size: 16px;
           line-height: 23px;
+          cursor: text;
         }
       }
     }
