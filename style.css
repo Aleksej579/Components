@@ -13,6 +13,7 @@
   --color__periwinkle: #C4CFFF;
   --color__purple-mountain-majesty: #9F77B4;
   --color__white: #FFFFFF;
+  --color__white-30: #f2efea;
   --color__orange: #FF5858;
   --color__grapfit-dark: #20232A;
   --color__grapfit-light: #282C34;
@@ -114,7 +115,9 @@ main {
       pre {
         border-width: 9px;
         border-color: var(--color__fringy-flower);
-        background-color: var(--color__sand);
+        /* background-color: var(--color__sand); */
+        /* background-color: var(--color__fringy-flower); */
+        background-color: var(--color__white-30);
         box-shadow: inset 15px 15px 15px #00000040;
         margin: 0;
         overflow: auto;

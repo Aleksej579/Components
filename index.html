@@ -16,6 +16,16 @@
     <main>
       <article>
             <details>
+              <summary><span>if page template</span></summary>
+              <pre>
+                <code>
+{% if template contains 'collection' %}
+  {% section 'popup-geolocation' %}
+{% endif %}
+                </code>
+              </pre>
+            </details>
+            <details>
               <summary><span>Metafield</span></summary>
               <pre>
                 <code>
@@ -43,7 +53,6 @@
                 <code>
 {% assign my_variable = false %}
 {% render 'filename' %}
-
 {{ 'file.css' | asset_url | stylesheet_tag }}
                 </code>
               </pre>
@@ -214,6 +223,113 @@
     ]
   }
 {% endschema %}
+                </code>
+              </pre>
+            </details>
+            <details>
+              <summary><span>popup</span></summary>
+              <pre>
+                <code>            
+{% if template contains 'timetable' %}
+  {% section 'popup-geolocation' %}
+{% endif %}
+
+{{ 'popup-geolocation.css' | asset_url | stylesheet_tag }}
+
+&lt;article class="popup-wrapper"&gt;
+  &lt;span class="icon-close-wrapper"&gt;{% render 'icon-close' %}&lt;/span&gt;
+  &lt;div class="wrapper__content"&gt;
+    &lt;h2>TEST&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;script&gt;
+  document.addEventListener('DOMContentLoaded', (event) => {
+    let popup_wrapper = document.querySelector('.popup-custom');
+    let popup_iconClose = document.querySelector('.icon-close-wrapper');
+
+    if (popup_wrapper && popup_iconClose) {
+      if (true) {
+        popup_wrapper.classList.remove('is-hide-popup');
+      }
+
+      popup_wrapper?.addEventListener('click', (event) => {
+        if (event.target.classList.contains('popup-custom')) {
+          popup_wrapper.classList.add('is-hide-popup');
+        }
+      });
+
+      popup_iconClose?.addEventListener('click', () => {
+        popup_wrapper.classList.add('is-hide-popup');
+      });
+    }
+  });
+&lt;/script&gt;
+
+{% schema %}
+  {
+    "name": "Popup",
+    "class": "popup-custom is-hide-popup",
+    "tag": "section",
+    "settings": []
+  }
+{% endschema %}
+
+:root {
+  --timer-animate: 500ms;
+}
+body {
+  position: relative;
+}
+.popup-custom.is-hide-popup {
+  display: none;
+}
+.popup-custom {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(38, 38, 38, 0.5);
+}
+.popup-wrapper {
+  background-color: var(--color-text-header);
+  padding: 112px;
+  height: fit-content;
+  margin-top: 5%;
+  position: fixed;
+  width: 984px;
+}
+@media (max-width: 1024px) {
+  .popup-wrapper {
+    width: 90%;
+    margin-top: 15%;
+  }
+}
+@media (max-width: 768px) {
+  .popup-wrapper {
+    flex-direction: column;
+    padding: 40px 16px 16px 16px;
+  }
+  .popup-wrapper button {
+    margin: 0 auto;
+  }
+}
+.popup-wrapper .icon-close-wrapper {
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 8px;
+  cursor: pointer;
+  transition-duration: var(--timer-animate);
+}
+.popup-wrapper .icon-close-wrapper:hover svg {
+  stroke: var(--color-background-header);
+}
                 </code>
               </pre>
             </details>
